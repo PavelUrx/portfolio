@@ -2,7 +2,7 @@ from django.contrib import admin
 from portfolioSite.models import *
 
 
-@admin.register(Index)
+@admin.register(Contact)
 class AuthorAdmin(admin.ModelAdmin):
     pass
 

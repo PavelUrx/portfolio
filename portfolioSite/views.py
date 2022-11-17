@@ -5,7 +5,7 @@ from portfolioSite.models import *
 
 def index(request):
     template = loader.get_template('index.html')
-    textContent = {'textContent' : Index.objects.all()}
+    contactContent = {'contactContent' : Contact.objects.all()}
     projectsContent = {'projectsContent' : Projects.objects.all()}
-    context = textContent | projectsContent
+    context = contactContent | projectsContent
     return HttpResponse(template.render(context))
