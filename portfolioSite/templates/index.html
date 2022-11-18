@@ -6,10 +6,10 @@
             <title>{{contactContent.last.my_name}}</title>  
             {% load staticfiles %}  
             
-            <link href="{% static 'css/bootstrap-theme.css' %}" rel="stylesheet" >  
+            <link href="{% static 'css/default_theme.css' %}" rel="stylesheet" >  
         </head> 
 
-        <body class = "bg-dark mh-100"> 
+        <body class = "svg-background"> 
             {% include "./widgets/navbar.html" with title=contactContent.last.my_name %}    
             <div class = "container">
                 <div class="row">
@@ -17,7 +17,7 @@
                         {% include "./widgets/contact_widget.html" with phone=contactContent.last.phone email=contactContent.last.email linkedin=contactContent.last.linkedin github=contactContent.last.github%}
                     </div>
                     <div class="col-xs-6 col-md-6 col-lg-6 gy-4">  
-                        {% include "./widgets/image_widget.html" with url="https://t4.ftcdn.net/jpg/00/56/96/27/360_F_56962791_o8syVNM8Ojo19TxJhLy1JW6RPHOin2zS.jpg"%}
+                        {% include "./widgets/image_widget.html" with url="https://thumbs.dreamstime.com/b/man-portrait-faceless-man-portrait-faceless-avatar-cartoon-character-beard-vector-illustration-graphic-design-145078614.jpg"%}
                     </div>
                 </div>
                 <div class="row">
@@ -28,7 +28,7 @@
                             </div>
                             {% elif item.type == "imw" %}
                                 <div class="col-xs-6 col-md-6 col-lg-4 gy-4">  
-                                    {% include "./widgets/image_widget.html" with url="https://t4.ftcdn.net/jpg/00/56/96/27/360_F_56962791_o8syVNM8Ojo19TxJhLy1JW6RPHOin2zS.jpg"%}
+                                    {% include "./widgets/image_widget.html" with url="https://thumbs.dreamstime.com/b/man-portrait-faceless-man-portrait-faceless-avatar-cartoon-character-beard-vector-illustration-graphic-design-145078614.jpg"%}
                                 </div>
                             {% endif %}
                     {% endfor %}
