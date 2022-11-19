@@ -36,11 +36,27 @@
 }
 
 .navbar {
-  opacity: 0.8;
+  opacity: 0.5;
+}
+
+.footer {
+  opacity: 0.5;
 }
 
 .list-group-item {
   opacity: 0.5;
+}
+
+.ic {
+  color: #ffd87a;
+}
+
+.btn {
+  opacity: 0.5;
+}
+
+.hr {
+  border-top: 0px solid;
 }
 
 /*!

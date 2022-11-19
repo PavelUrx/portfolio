@@ -4,20 +4,31 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <meta charset="UTF-8">  
             <title>{{contactContent.last.my_name}}</title>  
-            {% load staticfiles %}  
+            {% load static %}  
             
-            <link href="{% static 'css/default_theme.css' %}" rel="stylesheet" >  
+            <link href="{% static "/css/default_theme.css" %}" rel="stylesheet" > 
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
         </head> 
 
         <body class = "svg-background"> 
             {% include "./widgets/navbar.html" with title=contactContent.last.my_name %}    
             <div class = "container">
                 <div class="row">
-                    <div class="col-xs-6 col-md-6 col-lg-6 gy-4">  
-                        {% include "./widgets/contact_widget.html" with phone=contactContent.last.phone email=contactContent.last.email linkedin=contactContent.last.linkedin github=contactContent.last.github%}
+                    <div class="col-xs-12 col-md-12 col-lg-12 gy-4">  
+                        <h2 class="title">O MNĚ</h2>
                     </div>
-                    <div class="col-xs-6 col-md-6 col-lg-6 gy-4">  
-                        {% include "./widgets/image_widget.html" with url="https://thumbs.dreamstime.com/b/man-portrait-faceless-man-portrait-faceless-avatar-cartoon-character-beard-vector-illustration-graphic-design-145078614.jpg"%}
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 col-md-8 col-lg-8 gy-4">  
+                        {% include "./widgets/contact_widget.html" with email=contactContent.last.email linkedin=contactContent.last.linkedin github=contactContent.last.github%}
+                    </div>
+                    <div class="col-xs-4 col-md-4 col-lg-4 gy-4">  
+                        {% include "./widgets/image_widget.html" with url=contactContent.last.my_image %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 col-lg-12 gy-4">  
+                        <h2 class="title">PORTFOLIO</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -28,11 +39,12 @@
                             </div>
                             {% elif item.type == "imw" %}
                                 <div class="col-xs-6 col-md-6 col-lg-4 gy-4">  
-                                    {% include "./widgets/image_widget.html" with url="https://thumbs.dreamstime.com/b/man-portrait-faceless-man-portrait-faceless-avatar-cartoon-character-beard-vector-illustration-graphic-design-145078614.jpg"%}
+                                    {% include "./widgets/image_widget.html" with url=item.url%}
                                 </div>
                             {% endif %}
                     {% endfor %}
                 </div>
-            </div> 
+            </div>                 
+            {% include "./widgets/footer_widget.html" %}
         </body>  
     </html>

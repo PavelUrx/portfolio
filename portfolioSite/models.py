@@ -7,6 +7,7 @@ class Contact(models.Model):
     email = models.EmailField(default="email@email.com")
     github = models.URLField(default="www.a.cz")
     linkedin = models.URLField(default="www.a.cz")
+    my_image = models.URLField(default="https://cdn.pixabay.com/photo/2022/10/02/15/42/sunrise-7493833_960_720.jpg")
 
 
     def __str__(self):
